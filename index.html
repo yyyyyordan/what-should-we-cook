@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#fff4e8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="What's for dinner?" />
+<title>What Should We Cook?</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <h1>What should we cook?</h1>
+      <p class="sub">Pick a protein. Get ideas. Start cooking.</p>
+    </header>
+
+    <section class="card" aria-labelledby="meat-label">
+      <h2 id="meat-label" class="section-title">Tonight's protein</h2>
+      <div class="meat-grid" id="meatGrid" role="radiogroup" aria-label="Meat type"></div>
+    </section>
+
+    <section class="card filters-card" aria-labelledby="filter-label">
+      <div class="filters-head">
+        <h2 id="filter-label" class="section-title">Any preferences?</h2>
+        <button class="link-btn" id="clearFilters" type="button">Clear</button>
+      </div>
+      <div class="chip-row" id="filterChips" role="group" aria-label="Preferences"></div>
+    </section>
+
+    <div class="count-bar" id="countBar" aria-live="polite"></div>
+
+    <section class="results" id="results" aria-live="polite"></section>
+
+    <footer class="foot">
+      <p>Made with love for our kitchen. Tap a card to see it bigger.</p>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close-btn" id="modalClose" aria-label="Close">×</button>
+      <h3 id="modalTitle"></h3>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="meta" id="modalMeta"></div>
+      <div class="chip-row small" id="modalTags"></div>
+      <p class="modal-hint">Tip: search this name on Google or YouTube for full recipes.</p>
+      <a class="primary-btn" id="modalSearch" target="_blank" rel="noopener">Find recipes on Google</a>
+    </div>
+  </div>
+
+  <script src="recipes.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
